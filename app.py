@@ -1,5 +1,5 @@
 from bson import ObjectId
-from flask import Flask, Response, request
+from flask import Flask, Response, jsonify, request
 import json, os
 from pymongo import MongoClient
 from flask_cors import CORS
@@ -40,11 +40,7 @@ def create_app():
             print(data)
             blogs.insert_one(data)
             
-        return Response(
-            response=True,
-            status=200,
-            mimetype="application/json"
-        )
+        return jsonify({"message" : "blog added"})
         
     ################################ diplay each blog page #####################################
 
