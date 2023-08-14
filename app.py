@@ -11,7 +11,7 @@ load_dotenv()
 def create_app():
 
     app = Flask(__name__)
-    CORS(app, origins=["http://localhost:3000", "https://admirable-pithivier-2e5237.netlify.app/"])
+    CORS(app, origins=["http://localhost:3000", "https://react-dojo-blog-website.netlify.app/"])
 
     mongo = MongoClient(os.getenv("MONGODB_URI"))
     db = mongo["react_blog"]
